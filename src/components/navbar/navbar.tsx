@@ -58,7 +58,14 @@ export default function Navbar(props : Props){
                         <SearchBox 
                         searchValue={city} 
                         onChange={(e)=>handleInputChange(e.target.value)} 
-                        onSubmit={handleSubmitSearch}/>
+                        onSubmit={handleSubmitSearch}/>  
+                        {
+                            error && (
+                                <p style={{color: 'red'}}>
+                                    {error}
+                                </p>
+                            )
+                        }
                     </div>
                 </section>
             </div>
@@ -67,3 +74,14 @@ export default function Navbar(props : Props){
 }
 
 //리액트 아이콘 npm install react-icons --save
+
+
+//chatGPT API 사용법
+//npm install openai 
+//chatGPT API 사이트 로그인
+//상단 Dashboard -> API keys 로 접속
+//create new secret key
+//sk-proj-tU1rgm568mEexhuUuiDoT3BlbkFJrOCyxcJ6urXnKAuQrl8m  > 시크릿키
+//save your key 페이지에서 시크릿키 무조건 백업. 다시 안보여줌
+//우측 상단의 setting 에서 billing접속하여 잔여요금 확인
+//over view에서 카드 추가하기 (없다면)
